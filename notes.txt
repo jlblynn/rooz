@@ -1,5 +1,39 @@
 Was getting:
-error vue-webpack-project@1.0.0 dev: `webpack-dev-server --inline --progress --config build/webpack.dev.conf.js`
+  error vue-webpack-project@1.0.0 dev: `webpack-dev-server --inline --progress --config build/webpack.dev.conf.js`
 Fixed with:
-npm install webpack-dev-server@2.9.7 --save-dev
+  npm install webpack-dev-server@2.9.7 --save-dev
 Now getting vunerability errors to do with webpack.
+
+Init the package.json in the server folder:
+  cd to server
+  npm init -f
+
+Then to use nodemon and eslint:
+  npm install --save nodemon eslint
+
+Then in the server package.json delete the test script and replace with:
+  "start": "nodemon src/app.js --exec  \"npm run lint && node\"",
+  "lint": "eslint src/**/*.js"
+
+Run the server:
+  npm start
+Gives an error:
+  ESLint couldn't find a configuration file.
+cd to where eslint.js is intalled and run --init:
+  node ./node_modules/eslint/bin/eslint.js --init
+
+Getting error:
+  Failed at the server@1.0.0 lint script.
+Seemed to fix by adding a rule to .eslintrc.js:
+  "rules": {
+      'no-console': 'off'
+  }
+
+Install more dependencies:
+  npm install --save express body-parser cors morgan
+
+Body Parser, Parse incoming request bodies in a middleware before your handlers, available under the req.body property.
+Cors, provides a Connect/Express middleware that can be used to enable CORS with various options.
+Morgan, HTTP request logger middleware.
+
+
