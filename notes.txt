@@ -1,0 +1,5 @@
+Was getting:
+error vue-webpack-project@1.0.0 dev: `webpack-dev-server --inline --progress --config build/webpack.dev.conf.js`
+Fixed with:
+npm install webpack-dev-server@2.9.7 --save-dev
+Now getting vunerability errors to do with webpack.
