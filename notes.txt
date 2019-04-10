@@ -36,4 +36,13 @@ Body Parser, Parse incoming request bodies in a middleware before your handlers,
 Cors, provides a Connect/Express middleware that can be used to enable CORS with various options.
 Morgan, HTTP request logger middleware.
 
+In the client folder install the axios package:
+  npm install --save axios
+It's a library for making http requests to the backend.
+
+Create a 'services' folder in src and an 'Api.js' file inside that.
+This will be the connector for hitting the backend.
+
+In the same folder create 'AuthenticationService.js'.
+This will hit the hit the register endpoint we are yet to build.
 
